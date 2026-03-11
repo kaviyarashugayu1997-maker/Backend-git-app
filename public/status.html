@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Backend API Test</title>
+</head>
+
+<body>
+
+<h1>Backend Server</h1>
+
+<button onclick="loadUsers()">Get Users</button>
+
+<ul id="result"></ul>
+
+<script>
+
+function loadUsers(){
+
+fetch("/api/users")
+
+.then(res => res.json())
+
+.then(data => {
+
+const list = document.getElementById("result")
+
+list.innerHTML=""
+
+data.forEach(user => {
+
+const li = document.createElement("li")
+li.innerText = user.name
+
+list.appendChild(li)
+
+})
+
+})
+
+}
+
+</script>
+
+</body>
+</html>
