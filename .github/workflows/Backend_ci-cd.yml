@@ -61,4 +61,5 @@ jobs:
           echo "Run new container" 
           docker run -d -p 5000:5000 --name backend backend-gitapp
           echo "Deployment Completed"
+
       EOF    
